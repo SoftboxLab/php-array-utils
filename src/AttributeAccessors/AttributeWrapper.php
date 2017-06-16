@@ -107,6 +107,10 @@ class AttributeWrapper implements AttributeAccessor {
      * @return mixed|null
      */
     protected function get($target) {
-        return isset($target[$this->attribute]) ? $target[$this->attribute] : null;
+        if (!array_key_exists($this->attribute, $target)) {
+            return AttributeNotExists::instance();
+        }
+
+        return $target[$this->attribute];
     }
 }

@@ -22,7 +22,9 @@ class ValidationRuleFactory {
                 new DateValidation(),
                 new InValidation(),
                 new NotInValidation(),
-                new StringValidation()
+                new StringValidation(),
+                new IsPresentValidation(),
+                new BooleanValidation()
             );
 
             foreach ($classes as $instance) {

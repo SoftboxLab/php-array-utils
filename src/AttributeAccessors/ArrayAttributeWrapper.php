@@ -74,12 +74,14 @@ class ArrayAttributeWrapper extends AttributeWrapper {
      * @return boolean
      */
     public function validate($target) {
+        if (!is_array($target)) {
+            return $this->validateRule->validate(AttributeNotExists::instance());
+        }
+
         $ret = array();
 
-        $total = count($target);
-
-        for ($i = 0; $i < $total; $i++) {
-            $ret = array_merge($ret, $this->appendAttrToFailMessages($i, $this->validateRule->validate(isset($target[$i]) ? $target[$i] : null)));
+        foreach ($target as $key => $value) {
+            $ret = array_merge($ret, $this->appendAttrToFailMessages($key, $this->validateRule->validate($value)));
         }
 
         return $ret;

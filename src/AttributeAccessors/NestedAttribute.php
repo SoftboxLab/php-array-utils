@@ -22,7 +22,6 @@ class NestedAttribute implements AttributeAccessor {
         $this->attributeAccessor->setValue($target, $newValue);
     }
 
-
     public function cast(array $target) {
         return $this->attributeAccessor->cast($target);
     }

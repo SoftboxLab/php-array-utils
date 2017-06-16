@@ -61,16 +61,14 @@ class ArrayNestedAttributeWrapper extends NestedAttribute {
     }
 
     public function validate($target) {
-        if ($target == null) {
-            return parent::validate(null);
+        if (!is_array($target)) {
+            return parent::validate(AttributeNotExists::instance());
         }
 
         $ret = array();
 
-        $total = count($target);
-
-        for ($i = 0; $i < $total; $i++) {
-            $ret = array_merge($ret, $this->appendAttrToFailMessages($i, parent::validate($target[$i])));
+        foreach ($target as $key => $value) {
+            $ret = array_merge($ret, $this->appendAttrToFailMessages($key, parent::validate($value)));
         }
 
         return $ret;

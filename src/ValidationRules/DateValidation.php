@@ -30,6 +30,9 @@ class DateValidation implements ValidationRule {
      * @return array
      */
     public function validate($value) {
+        if (!is_string($value) || !is_numeric($value)) {
+            return array("O campo deve ser um valor numérico ou string.");
+        }
         if ($this->format) {
             return $this->validateWithFormat($value);
         }

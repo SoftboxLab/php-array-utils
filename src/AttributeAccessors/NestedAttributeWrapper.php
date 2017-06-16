@@ -16,7 +16,7 @@ class NestedAttributeWrapper extends NestedAttribute {
     }
 
     public function getValue(array $target) {
-        if (!isset($target[$this->attribute])) {
+        if (!array_key_exists($this->attribute, $target)) {
             return null;
         }
 
@@ -41,8 +41,21 @@ class NestedAttributeWrapper extends NestedAttribute {
         return $target;
     }
 
+    /**
+     * @param array $target
+     *
+     * @return mixed|null
+     */
+    protected function get($target) {
+        if (!array_key_exists($this->attribute, $target)) {
+            return AttributeNotExists::instance();
+        }
+
+        return $target[$this->attribute];
+    }
+
     public function validate($target) {
-        $ret = parent::validate(isset($target[$this->attribute]) ? $target[$this->attribute] : null);
+        $ret = parent::validate($this->get($target));
 
         foreach ($ret as &$failMsg) {
             $failMsg = $this->attribute . "." . $failMsg;
