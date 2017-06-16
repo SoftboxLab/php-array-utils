@@ -71,7 +71,7 @@ class ArrayAttributeWrapper extends AttributeWrapper {
     /**
      * @param array $target
      *
-     * @return boolean
+     * @return array
      */
     public function validate($target) {
         if (!is_array($target)) {
