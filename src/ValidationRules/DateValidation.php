@@ -30,14 +30,11 @@ class DateValidation implements ValidationRule {
      * @return array
      */
     public function validate($value) {
-        if (!is_string($value) || !is_numeric($value)) {
-            return array("O campo deve ser um valor numérico ou string.");
-        }
-        if ($this->format) {
-            return $this->validateWithFormat($value);
+        if ($value === null) {
+            return array();
         }
 
-        return strtotime($value) === false ? array("O campo deve ser uma data valida.") : array();
+        return $this->validateDateStructure($value);
     }
 
     /**
@@ -45,5 +42,22 @@ class DateValidation implements ValidationRule {
      */
     public function setParams($params) {
         $this->format = isset($params[0]) && is_string($params[0]) ? $params[0] : null;
+    }
+
+    /**
+     * @param $value
+     *
+     * @return array
+     */
+    private function validateDateStructure($value) {
+        if (!is_string($value) || !is_numeric($value)) {
+            return array("O campo deve ser um valor numérico ou string.");
+        }
+
+        if ($this->format) {
+            return $this->validateWithFormat($value);
+        }
+
+        return strtotime($value) === false ? array("O campo deve ser uma data valida.") : array();
     }
 }
