@@ -1,22 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tarcisio
- * Date: 15/06/17
- * Time: 15:49
- */
 
 namespace ArrayUtils\ValidationRules;
 
 use ArrayUtils\ValidationRule;
 
-class RequiredValidation implements ValidationRule {
+class InValidation implements ValidationRule {
+    private $allowedValues;
 
     /**
      * @return string
      */
     public function getIdentifier() {
-        return 'required';
+        return "in";
     }
 
     /**
@@ -25,8 +20,8 @@ class RequiredValidation implements ValidationRule {
      * @return array
      */
     public function validate($value) {
-        if (!isset($value)) {
-            return array("Campo obrigatório.");
+        if (!in_array($value, $this->allowedValues)) {
+            return array("O campo deve ser um destes valores " . implode(", ", $this->allowedValues));
         }
 
         return array();
@@ -36,5 +31,6 @@ class RequiredValidation implements ValidationRule {
      * @param mixed $params
      */
     public function setParams($params) {
+        $this->allowedValues = is_array($params) ? $params : array();
     }
 }

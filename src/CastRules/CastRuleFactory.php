@@ -47,7 +47,7 @@ abstract class CastRuleFactory {
         return $ret;
     }
 
-    public static function registerCastRule(CastRule $castRule) {
+    public static function register(CastRule $castRule) {
         static::load();
 
         static::$castRules[$castRule->getIdentifier()] = $castRule;

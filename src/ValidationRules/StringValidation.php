@@ -1,22 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tarcisio
- * Date: 15/06/17
- * Time: 15:49
- */
 
 namespace ArrayUtils\ValidationRules;
 
 use ArrayUtils\ValidationRule;
 
-class RequiredValidation implements ValidationRule {
-
+class StringValidation implements ValidationRule {
     /**
      * @return string
      */
     public function getIdentifier() {
-        return 'required';
+        return "string";
     }
 
     /**
@@ -25,11 +18,7 @@ class RequiredValidation implements ValidationRule {
      * @return array
      */
     public function validate($value) {
-        if (!isset($value)) {
-            return array("Campo obrigatório.");
-        }
-
-        return array();
+        return is_string($value) ? array() : array("O campo deve ser uma string.");
     }
 
     /**

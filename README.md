@@ -1,4 +1,4 @@
-# PHP-CAST
+# PHP-ARRAY-UTILS
 [![Build Status](https://travis-ci.org/tarcisiojr/php-cast.svg?branch=master)](https://travis-ci.org/tarcisiojr/php-cast)
 [![codecov](https://codecov.io/gh/tarcisiojr/php-cast/branch/master/graph/badge.svg)](https://codecov.io/gh/tarcisiojr/php-cast)
 [![Latest Stable Version](https://poser.pugx.org/tarcisiojr/php-cast/v/stable)](https://packagist.org/packages/tarcisiojr/php-cast)

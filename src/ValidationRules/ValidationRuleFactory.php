@@ -18,13 +18,23 @@ class ValidationRuleFactory {
             $classes = array(
                 new NumericValidation(),
                 new RequiredValidation(),
-                new MaxValueValidation()
+                new MaxValueValidation(),
+                new DateValidation(),
+                new InValidation(),
+                new NotInValidation(),
+                new StringValidation()
             );
 
             foreach ($classes as $instance) {
                 static::$validationRules[$instance->getIdentifier()] = $instance;
             }
         }
+    }
+
+    public static function register(ValidationRule $validationRule) {
+        self::load();
+
+        static::$validationRules[$validationRule->getIdentifier()] = $validationRule;
     }
 
     public static function create($rules) {
