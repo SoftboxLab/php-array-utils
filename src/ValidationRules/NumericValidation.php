@@ -26,11 +26,11 @@ class NumericValidation implements ValidationRule {
      * @return array
      */
     public function validate($value) {
-        if (($value === null && !$this->allowNull) || !is_numeric($value)) {
-            return array("Campo não é numérico.");
+        if (($this->allowNull && $value === null) || is_numeric($value)) {
+            return array();
         }
 
-        return array();
+        return array("Campo não é numérico.");
     }
 
     /**

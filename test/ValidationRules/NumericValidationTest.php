@@ -37,4 +37,18 @@ class NumericValidationTest extends \PHPUnit_Framework_TestCase {
         $this->assertNotEmpty($validation->validate(array()));
         $this->assertNotEmpty($validation->validate(AttributeNotExists::instance()));
     }
+
+    public function testNullableParam() {
+        $validation = new NumericValidation();
+        $validation->setParams(["nullable"]);
+
+        $this->assertEmpty($validation->validate(null));
+        $this->assertEmpty($validation->validate(1));
+        $this->assertEmpty($validation->validate(0));
+
+        $validation->setParams([]);
+        $this->assertNotEmpty($validation->validate(null));
+        $this->assertEmpty($validation->validate(1));
+        $this->assertEmpty($validation->validate(0));
+    }
 }
