@@ -5,7 +5,28 @@ namespace ArrayUtils;
 
 class ValidatorTest extends \PHPUnit_Framework_TestCase  {
 
-    public function testValidator() {
+    public function testArray() {
+        $validator = new Validator();
+        $validator
+            ->addRules([
+                "*.id" => "required|numeric",
+                "*.ok" => "required|boolean",
+            ])
+            ->addRule("*.msg", "present");
+
+        $this->assertEmpty($validator->validate([["id" => "1", "ok" => false, "msg" => null]]));
+        $this->assertEmpty($validator->validate([["id" => 1, "ok" => true, "msg" => ""]]));
+        $this->assertEmpty($validator->validate([["id" => 1, "ok" => true, "msg" => "Err"]]));
+        $this->assertEmpty($validator->validate([]));
+
+        $this->assertNotEmpty($validator->validate([["id" => null, "ok" => true, "msg" => "Err"]]));
+        $this->assertNotEmpty($validator->validate([["ok" => true, "msg" => "Err"]]));
+        $this->assertNotEmpty($validator->validate([["id" => 1, "ok" => true]]));
+        $this->assertNotEmpty($validator->validate(["id" => 1, "ok" => true, "msg" => "Err"]));
+        $this->assertNotEmpty($validator->validate(null));
+    }
+
+    public function atestValidator() {
         //Loader::load(Validator::class);
 
         $validator = new Validator();

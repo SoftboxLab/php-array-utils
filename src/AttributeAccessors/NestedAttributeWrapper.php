@@ -47,7 +47,7 @@ class NestedAttributeWrapper extends NestedAttribute {
      * @return mixed|null
      */
     protected function get($target) {
-        if (!array_key_exists($this->attribute, $target)) {
+        if (!is_array($target) || !array_key_exists($this->attribute, $target)) {
             return AttributeNotExists::instance();
         }
 
