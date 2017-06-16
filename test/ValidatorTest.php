@@ -11,6 +11,8 @@ namespace PHP\Cast;
 class ValidatorTest extends \PHPUnit_Framework_TestCase  {
 
     public function testValidator() {
+        ArrayUtilsLoader::load(Validator::class);
+
         $validator = new Validator();
         $validator
             //->addRule('c', 'required')
@@ -23,7 +25,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase  {
 
         $valores = [];
 
-        for ($i = 0; $i < 5000; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             $valores[] = ["a" => $i];
         }
 
