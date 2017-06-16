@@ -11,7 +11,7 @@ class NotInValidation implements ValidationRule {
      * @return string
      */
     public function getIdentifier() {
-        return "in";
+        return "not_in";
     }
 
     /**
