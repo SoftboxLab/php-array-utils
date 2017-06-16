@@ -6,9 +6,9 @@
  * Time: 14:11
  */
 
-namespace PHP\Cast\AttributeAccessors;
+namespace ArrayUtils\AttributeAccessors;
 
-use PHP\Cast\AttributeAccessor;
+use ArrayUtils\AttributeAccessor;
 
 class ArrayAttributeWrapperTest extends \PHPUnit_Framework_TestCase {
 

@@ -6,7 +6,7 @@
  * Time: 21:43
  */
 
-namespace PHP\Cast;
+namespace ArrayUtils;
 
 interface AttributeAccessor {
 

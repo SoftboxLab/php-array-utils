@@ -6,9 +6,9 @@
  * Time: 15:49
  */
 
-namespace PHP\Cast\ValidationRules;
+namespace ArrayUtils\ValidationRules;
 
-use PHP\Cast\ValidationRule;
+use ArrayUtils\ValidationRule;
 
 class RequiredValidation implements ValidationRule {
 

@@ -10,7 +10,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="PHP Cast Test Suite">
+        <testsuite name="PHP Array Utils Test Suite">
             <directory>test</directory>
         </testsuite>
     </testsuites>

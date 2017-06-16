@@ -1,6 +1,6 @@
 <?php
 
-namespace PHP\Cast;
+namespace ArrayUtils;
 
 interface CastRule {
 

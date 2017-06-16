@@ -6,9 +6,9 @@
  * Time: 16:30
  */
 
-namespace PHP\Cast\ValidationRules;
+namespace ArrayUtils\ValidationRules;
 
-use PHP\Cast\ValidationRule;
+use ArrayUtils\ValidationRule;
 
 class GroupOfValidationRules implements ValidationRule {
     /** @var ValidationRule[] */

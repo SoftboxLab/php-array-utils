@@ -6,9 +6,9 @@
  * Time: 14:34
  */
 
-namespace PHP\Cast\CastRules;
+namespace ArrayUtils\CastRules;
 
-use PHP\Cast\CastRule;
+use ArrayUtils\CastRule;
 
 abstract class CastRuleBase implements CastRule {
 

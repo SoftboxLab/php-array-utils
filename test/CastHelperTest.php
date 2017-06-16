@@ -1,6 +1,6 @@
 <?php
 
-namespace PHP\Cast;
+namespace ArrayUtils;
 
 
 class CastHelperTest extends \PHPUnit_Framework_TestCase {
@@ -22,7 +22,7 @@ class CastHelperTest extends \PHPUnit_Framework_TestCase {
             ]
         ];
     }
-    public function atestSimpleCast() {
+    public function testSimpleCast() {
         $value = $this->getSample();
 
         $ret = (new CastHelper())

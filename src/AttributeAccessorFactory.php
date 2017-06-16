@@ -6,14 +6,14 @@
  * Time: 15:03
  */
 
-namespace PHP\Cast;
+namespace ArrayUtils;
 
-use PHP\Cast\AttributeAccessors\ArrayAttributeWrapper;
-use PHP\Cast\AttributeAccessors\ArrayNestedAttributeWrapper;
-use PHP\Cast\AttributeAccessors\AttributeWrapper;
-use PHP\Cast\AttributeAccessors\NestedAttributeWrapper;
-use PHP\Cast\CastRules\CastRuleFactory;
-use PHP\Cast\ValidationRules\ValidationRuleFactory;
+use ArrayUtils\AttributeAccessors\ArrayAttributeWrapper;
+use ArrayUtils\AttributeAccessors\ArrayNestedAttributeWrapper;
+use ArrayUtils\AttributeAccessors\AttributeWrapper;
+use ArrayUtils\AttributeAccessors\NestedAttributeWrapper;
+use ArrayUtils\CastRules\CastRuleFactory;
+use ArrayUtils\ValidationRules\ValidationRuleFactory;
 
 class AttributeAccessorFactory {
 

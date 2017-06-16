@@ -1,6 +1,6 @@
 {
-    "name": "tarcisiojr/php-cast",
-    "description": "Lib to cast values",
+    "name": "tarcisiojr/php-array-utils",
+    "description": "Lib with many array utilitaries.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -12,8 +12,8 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "PHP\\Cast\\": "src/",
-            "Test\\PHP\\Cast\\": "test/"
+            "ArrayUtils\\": "src/",
+            "Test\\ArrayUtils\\": "test/"
         }
     },
     "require-dev": {

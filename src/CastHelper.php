@@ -6,7 +6,7 @@
  * Time: 22:13
  */
 
-namespace PHP\Cast;
+namespace ArrayUtils;
 
 
 class CastHelper {

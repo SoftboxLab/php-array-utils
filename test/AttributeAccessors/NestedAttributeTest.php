@@ -6,9 +6,9 @@
  * Time: 14:25
  */
 
-namespace PHP\Cast\AttributeAccessors;
+namespace ArrayUtils\AttributeAccessors;
 
-use PHP\Cast\AttributeAccessor;
+use ArrayUtils\AttributeAccessor;
 
 class NestedAttributeTest extends \PHPUnit_Framework_TestCase {
 

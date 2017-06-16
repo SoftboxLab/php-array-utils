@@ -1,10 +1,10 @@
 <?php
 
-namespace PHP\Cast\AttributeAccessors;
+namespace ArrayUtils\AttributeAccessors;
 
-use PHP\Cast\AttributeAccessor;
-use PHP\Cast\CastRule;
-use PHP\Cast\ValidationRule;
+use ArrayUtils\AttributeAccessor;
+use ArrayUtils\CastRule;
+use ArrayUtils\ValidationRule;
 
 class NestedAttribute implements AttributeAccessor {
     /** @var AttributeAccessor */

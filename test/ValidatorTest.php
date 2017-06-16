@@ -1,17 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tarcisio
- * Date: 15/06/17
- * Time: 14:56
- */
 
-namespace PHP\Cast;
+namespace ArrayUtils;
+
 
 class ValidatorTest extends \PHPUnit_Framework_TestCase  {
 
     public function testValidator() {
-        ArrayUtilsLoader::load(Validator::class);
+        //Loader::load(Validator::class);
 
         $validator = new Validator();
         $validator

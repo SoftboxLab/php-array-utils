@@ -6,7 +6,7 @@
  * Time: 19:34
  */
 
-namespace PHP\Cast;
+namespace ArrayUtils;
 
 use Throwable;
 

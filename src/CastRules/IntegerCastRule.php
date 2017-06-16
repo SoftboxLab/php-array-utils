@@ -1,6 +1,6 @@
 <?php
 
-namespace PHP\Cast\CastRules;
+namespace ArrayUtils\CastRules;
 
 class IntegerCastRule  extends CastRuleBase {
 

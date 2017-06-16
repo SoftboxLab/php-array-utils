@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tarcisio
- * Date: 15/06/17
- * Time: 14:56
- */
 
-namespace PHP\Cast;
+namespace ArrayUtils;
 
 class Validator {
     /**

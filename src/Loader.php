@@ -6,10 +6,10 @@
  * Time: 20:53
  */
 
-namespace PHP\Cast;
+namespace ArrayUtils;
 
-class ArrayUtilsLoader {
-    const NAMESPACE_BASE = 'PHP\Cast';
+class Loader {
+    const NAMESPACE_BASE = 'ArrayUtils';
 
     public static function load($className) {
         $length = strlen(self::NAMESPACE_BASE);

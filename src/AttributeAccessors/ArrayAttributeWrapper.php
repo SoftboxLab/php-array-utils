@@ -1,10 +1,10 @@
 <?php
 
-namespace PHP\Cast\AttributeAccessors;
+namespace ArrayUtils\AttributeAccessors;
 
 
-use PHP\Cast\CastRule;
-use PHP\Cast\ValidationRule;
+use ArrayUtils\CastRule;
+use ArrayUtils\ValidationRule;
 
 class ArrayAttributeWrapper extends AttributeWrapper {
 

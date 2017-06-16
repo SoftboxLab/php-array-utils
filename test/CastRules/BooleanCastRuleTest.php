@@ -6,9 +6,9 @@
  * Time: 19:40
  */
 
-namespace PHP\Cast\CastRules;
+namespace ArrayUtils\CastRules;
 
-use PHP\Cast\CastRule;
+use ArrayUtils\CastRule;
 
 class BooleanCastRuleTest extends \PHPUnit_Framework_TestCase {
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace PHP\Cast\AttributeAccessors;
+namespace ArrayUtils\AttributeAccessors;
 
-use PHP\Cast\AttributeAccessor;
+use ArrayUtils\AttributeAccessor;
 
 class ArrayNestedAttributeWrapper extends NestedAttribute {
 

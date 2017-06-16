@@ -1,9 +1,9 @@
 <?php
 
-namespace PHP\Cast\AttributeAccessors;
+namespace ArrayUtils\AttributeAccessors;
 
-use PHP\Cast\AttributeAccessor;
-use PHP\Cast\CastRule;
+use ArrayUtils\AttributeAccessor;
+use ArrayUtils\CastRule;
 
 class AttributeWrapperTest extends \PHPUnit_Framework_TestCase {
 
