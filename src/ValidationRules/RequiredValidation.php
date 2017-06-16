@@ -8,6 +8,7 @@
 
 namespace ArrayUtils\ValidationRules;
 
+use ArrayUtils\AttributeAccessors\AttributeNotExists;
 use ArrayUtils\ValidationRule;
 
 class RequiredValidation implements ValidationRule {
@@ -25,7 +26,7 @@ class RequiredValidation implements ValidationRule {
      * @return array
      */
     public function validate($value) {
-        if (!isset($value)) {
+        if (!isset($value) || $value instanceof AttributeNotExists) {
             return array("Campo obrigatório.");
         }
 

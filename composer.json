@@ -12,8 +12,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "ArrayUtils\\": "src/",
-            "Test\\ArrayUtils\\": "test/"
+            "ArrayUtils\\": ["src/", "test/"]
         }
     },
     "require-dev": {

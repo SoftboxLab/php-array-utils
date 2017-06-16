@@ -18,7 +18,7 @@ class StringValidation implements ValidationRule {
      * @return array
      */
     public function validate($value) {
-        return is_string($value) || $value === null ? array() : array("O campo deve ser uma string.");
+        return is_string($value) ? array() : array("O campo deve ser uma string.");
     }
 
     /**

@@ -15,7 +15,7 @@ class DateValidation implements ValidationRule {
     }
 
     private function validateWithFormat($value) {
-        $date = DateTime::createFromFormat($this->format, $value);
+        $date = \DateTime::createFromFormat($this->format, $value);
 
         if (!$date || $date->format($this->format) != $value) {
             return array("A data fornecida não respeita o padrão '" . $this->format . "'.");
@@ -30,8 +30,8 @@ class DateValidation implements ValidationRule {
      * @return array
      */
     public function validate($value) {
-        if ($value === null) {
-            return array();
+        if (!is_string($value) && !is_numeric($value)) {
+            return array("O campo deve ser um valor numérico ou string.");
         }
 
         return $this->validateDateStructure($value);
@@ -50,10 +50,6 @@ class DateValidation implements ValidationRule {
      * @return array
      */
     private function validateDateStructure($value) {
-        if (!is_string($value) || !is_numeric($value)) {
-            return array("O campo deve ser um valor numérico ou string.");
-        }
-
         if ($this->format) {
             return $this->validateWithFormat($value);
         }
