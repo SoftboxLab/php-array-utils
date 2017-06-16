@@ -11,6 +11,7 @@ namespace ArrayUtils\ValidationRules;
 use ArrayUtils\ValidationRule;
 
 class NumericValidation implements ValidationRule {
+    private $allowNull = false;
 
     /**
      * @return string
@@ -25,7 +26,7 @@ class NumericValidation implements ValidationRule {
      * @return array
      */
     public function validate($value) {
-        if (!is_numeric($value)) {
+        if (($value === null && !$this->allowNull) || !is_numeric($value)) {
             return array("Campo não é numérico.");
         }
 
@@ -36,5 +37,6 @@ class NumericValidation implements ValidationRule {
      * @param mixed $params
      */
     public function setParams($params) {
+        $this->allowNull = isset($params[0]) && $params[0] == "nullable";
     }
 }
