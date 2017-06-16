@@ -32,4 +32,14 @@ class InValidationTest extends \PHPUnit_Framework_TestCase {
         $this->assertNotEmpty($validation->validate(array()));
         $this->assertNotEmpty($validation->validate(AttributeNotExists::instance()));
     }
+
+    public function testArr0Or1() {
+        $validation = new InValidation();
+        $validation->setParams(explode(",", "0,1"));
+
+        $this->assertEmpty($validation->validate("1"));
+        $this->assertEmpty($validation->validate(1));
+        $this->assertEmpty($validation->validate("0"));
+        $this->assertEmpty($validation->validate(0));
+    }
 }

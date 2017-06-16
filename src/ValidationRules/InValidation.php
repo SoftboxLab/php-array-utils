@@ -5,7 +5,7 @@ namespace ArrayUtils\ValidationRules;
 use ArrayUtils\ValidationRule;
 
 class InValidation implements ValidationRule {
-    private $allowedValues;
+    private $allowedValues = array();
 
     /**
      * @return string
