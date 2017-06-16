@@ -68,6 +68,6 @@ class ValidationRuleFactory {
             return null;
         }
 
-        return array_filter(explode(",", $params));
+        return explode(",", $params);
     }
 }
