@@ -5,7 +5,7 @@ namespace ArrayUtils\ValidationRules;
 use ArrayUtils\ValidationRule;
 
 class NotInValidation implements ValidationRule {
-    private $allowedValues;
+    private $allowedValues = array();
 
     /**
      * @return string
@@ -20,7 +20,7 @@ class NotInValidation implements ValidationRule {
      * @return array
      */
     public function validate($value) {
-        if (in_array($value, $this->allowedValues)) {
+        if (is_scalar($value) && in_array($value, $this->allowedValues)) {
             return array("O campo não deve ser um destes valores " . implode(", ", $this->allowedValues));
         }
 

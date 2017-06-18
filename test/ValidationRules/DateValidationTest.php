@@ -37,6 +37,7 @@ class DateValidationTest extends \PHPUnit_Framework_TestCase {
 
         $validation->setParams(["d-m-Y"]);
 
-        $this->assertEmpty($validation->validate("01-31-2017"));
+        $this->assertNotEmpty($validation->validate("01-31-2017"));
+        $this->assertEmpty($validation->validate("31-01-2017"));
     }
 }

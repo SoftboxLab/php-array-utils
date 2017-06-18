@@ -14,7 +14,7 @@ class NestedAttributeTest extends \PHPUnit_Framework_TestCase {
 
     public function testInstanceOf() {
         $mock = $this->getMockBuilder(AttributeAccessor::class)
-                             ->setMethods(["getValue", "cast", "withoutCasting", "withCasting", "setValue"])
+                             ->setMethods(["getValue", "cast", "withoutCasting", "withCasting", "setValue", "setValidateRule", "setCastRule", "validate"])
                              ->getMock();
 
         $nestedAttr = new NestedAttribute($mock);
@@ -24,7 +24,7 @@ class NestedAttributeTest extends \PHPUnit_Framework_TestCase {
 
     public function testGetValue() {
         $mock = $this->getMockBuilder(AttributeAccessor::class)
-                     ->setMethods(["getValue", "cast", "withoutCasting", "withCasting", "setValue"])
+                     ->setMethods(["getValue", "cast", "withoutCasting", "withCasting", "setValue", "setValidateRule", "setCastRule", "validate"])
                      ->getMock();
 
         $mock->method("getValue")->willReturn("mockValue");
@@ -38,7 +38,7 @@ class NestedAttributeTest extends \PHPUnit_Framework_TestCase {
 
     public function testCastValue() {
         $mock = $this->getMockBuilder(AttributeAccessor::class)
-                     ->setMethods(["getValue", "cast", "withoutCasting", "withCasting", "setValue"])
+                     ->setMethods(["getValue", "cast", "withoutCasting", "withCasting", "setValue", "setValidateRule", "setCastRule", "validate"])
                      ->getMock();
 
         $mock->method("cast")->willReturn("mockValue");

@@ -16,9 +16,11 @@ class StringCastRule extends CastRuleBase {
     }
 
     private function loadOptionsHandlers() {
-        $params = $this->params;
+        $self = $this;
 
-        $this->addOptionHandler("max_length", function($value) use ($params) {
+        $this->addOptionHandler("max_length", function($value) use ($self) {
+            $params = $this->getParams();
+
             return substr(
                 $value,
                 0,
@@ -26,7 +28,9 @@ class StringCastRule extends CastRuleBase {
             );
         });
 
-        $this->addOptionHandler("rpad", function($value) use ($params) {
+        $this->addOptionHandler("rpad", function($value) use ($self) {
+            $params = $this->getParams();
+
             return str_pad(
                 $value,
                 isset($params["rpad"][0]) ? $params["rpad"][0] : 0,
@@ -34,7 +38,9 @@ class StringCastRule extends CastRuleBase {
                 STR_PAD_RIGHT);
         });
 
-        $this->addOptionHandler("lpad", function($value) use ($params) {
+        $this->addOptionHandler("lpad", function($value) use ($self) {
+            $params = $this->getParams();
+
             return str_pad(
                 $value,
                 isset($params["lpad"][0]) ? $params["lpad"][0] : 0,

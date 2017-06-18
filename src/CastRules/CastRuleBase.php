@@ -38,6 +38,10 @@ abstract class CastRuleBase implements CastRule {
         return $value;
     }
 
+    public function getParams() {
+        return $this->params;
+    }
+
     public function cast($value) {
         return $this->executeOptions($value);
     }

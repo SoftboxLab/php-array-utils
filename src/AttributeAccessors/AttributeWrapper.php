@@ -48,7 +48,7 @@ class AttributeWrapper implements AttributeAccessor {
     }
 
     public function getValue(array $target) {
-        $value = $this->get($target);
+        $value = $this->getSafe($target);
 
         return $this->castRule && $this->castEnabled ? $this->castRule->cast($value) : $value;
     }
@@ -62,7 +62,7 @@ class AttributeWrapper implements AttributeAccessor {
             $target = array();
         }
 
-        $value = $this->get($target);
+        $value = $this->getSafe($target);
 
         $target[$this->attribute] = $this->castRule ? $this->castRule->cast($value) : $value;
 
@@ -112,5 +112,9 @@ class AttributeWrapper implements AttributeAccessor {
         }
 
         return $target[$this->attribute];
+    }
+
+    protected function getSafe($target) {
+        return isset($target[$this->attribute]) ? $target[$this->attribute] : null;
     }
 }

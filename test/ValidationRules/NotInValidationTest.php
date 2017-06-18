@@ -25,10 +25,11 @@ class NotInValidationTest extends \PHPUnit_Framework_TestCase {
     public function testInvalidValues() {
         $validation = new NotInValidation();
 
+        $validation->setParams([1,"2", "tres"]);
         $this->assertNotEmpty($validation->validate("1"));
         $this->assertNotEmpty($validation->validate("2"));
         $this->assertNotEmpty($validation->validate("tres"));
-        $this->assertNotEmpty($validation->validate(array()));
-        $this->assertNotEmpty($validation->validate(AttributeNotExists::instance()));
+        $this->assertEmpty($validation->validate(array()));
+        $this->assertEmpty($validation->validate(AttributeNotExists::instance()));
     }
 }
